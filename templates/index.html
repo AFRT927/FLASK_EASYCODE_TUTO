@@ -1,0 +1,14 @@
+
+{% extends 'base/base.html' %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+    {% from "_macro.html" import render_fields %}
+            <form name="sentForm" method="POST">
+                {{ render_fields(form.username, class='form-control') }}
+                {{ render_fields(form.email, class='form-control') }}
+                {{ render_fields(form.comment, class='form-control') }}
+                {{ render_fields(form.submit) }}
+            </form>
+{% endblock %}
+

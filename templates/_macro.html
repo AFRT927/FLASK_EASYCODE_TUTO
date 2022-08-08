@@ -1,0 +1,12 @@
+<!-- ojo, las macros son funciones que retornan codigo HTML -->
+{% macro render_fields(field) %} ojo
+    <td> {{ field.label }}
+    <dd> {{ field(**kwargs) | safe}}    
+    {% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+                <p>err: {{ error }}</p>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
